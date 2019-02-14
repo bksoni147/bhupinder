@@ -1,0 +1,22 @@
+<html>
+<head><title>my first page</title></head>
+<body>
+    <input type="text" id='xyz' name="abc" required/>
+    <button name="send"  onclick="fun()">send</button>
+
+<div id="div"></div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+        let socket=io();
+          fun=function(){
+           document.getElementById("div").innerHTML+=document.getElementById('xyz').value+"</br>"    
+          socket.emit("client",document.getElementById('xyz').value)
+         
+          }
+          socket.on("ji",(data)=>{
+            document.getElementById("div").innerHTML+="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+data+"</br>"})
+        
+       </script>
+       
+</html>

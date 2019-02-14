@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>my second page</title>
+    </head>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        var socket=io("/second")
+        socket.emit("create","room2")
+        socket.on("broad",(data)=>{
+            document.write(data)
+        })
+        document.write(socket.id)
+    </script>
+    <body>
+
+    </body>
+</html>
